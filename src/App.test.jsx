@@ -18,7 +18,9 @@ it('should increment the counter when increment pressed', () => {
   const incrementButton = screen.getByRole('button', { name: 'increment' })
   userEvent.click(incrementButton)
   expect(counter).toHaveTextContent('1')
-  expect(counter).toHaveStyle(`color: ${green}`)
+  setTimeout(() => {
+    expect(counter).toHaveStyle(`color: ${green}`)
+  }, 1000)
 
   userEvent.click(incrementButton)
   expect(counter).toHaveTextContent('2')
@@ -33,7 +35,9 @@ it('should decrement the counter when decrement pressed', () => {
   const decrementButton = screen.getByRole('button', { name: 'decrement' })
   userEvent.click(decrementButton)
   expect(counter).toHaveTextContent('-1')
-  expect(counter).toHaveStyle(`color: ${red}`)
+  setTimeout(() => {
+    expect(counter).toHaveStyle(`color: ${red}`)
+  }, 1000)
 
   userEvent.click(decrementButton)
   expect(counter).toHaveTextContent('-2')
@@ -48,12 +52,16 @@ it('should reset the counter when reset is pressed', () => {
   const decrementButton = screen.getByRole('button', { name: 'decrement' })
   userEvent.click(decrementButton)
   expect(counter).toHaveTextContent('-1')
-  expect(counter).toHaveStyle(`color: ${red}`)
+  setTimeout(() => {
+    expect(counter).toHaveStyle(`color: ${red}`)
+  }, 1000)
 
   const resetButton = screen.getByRole('button', { name: 'reset' })
   userEvent.click(resetButton)
   expect(counter).toHaveTextContent('0')
-  expect(counter).toHaveStyle(`color: ${pink}`)
+  setTimeout(() => {
+    expect(counter).toHaveStyle(`color: ${pink}`)
+  }, 1000)
 })
 
 it('should count and reset all the things', () => {
@@ -64,7 +72,9 @@ it('should count and reset all the things', () => {
   const incrementButton = screen.getByRole('button', { name: 'increment' })
   userEvent.click(incrementButton)
   expect(counter).toHaveTextContent('1')
-  expect(counter).toHaveStyle(`color: ${green}`)
+  setTimeout(() => {
+    expect(counter).toHaveStyle(`color: ${green}`)
+  }, 1000)
 
   userEvent.click(incrementButton)
   expect(counter).toHaveTextContent('2')
@@ -73,12 +83,16 @@ it('should count and reset all the things', () => {
   const resetButton = screen.getByRole('button', { name: 'reset' })
   userEvent.click(resetButton)
   expect(counter).toHaveTextContent('0')
-  expect(counter).toHaveStyle(`color: ${pink}`)
+  setTimeout(() => {
+    expect(counter).toHaveStyle(`color: ${pink}`)
+  }, 1000)
 
   const decrementButton = screen.getByRole('button', { name: 'decrement' })
   userEvent.click(decrementButton)
   expect(counter).toHaveTextContent('-1')
-  expect(counter).toHaveStyle(`color: ${red}`)
+  setTimeout(() => {
+    expect(counter).toHaveStyle(`color: ${red}`)
+  }, 1000)
 
   userEvent.click(decrementButton)
   expect(counter).toHaveTextContent('-2')
@@ -86,5 +100,7 @@ it('should count and reset all the things', () => {
 
   userEvent.click(resetButton)
   expect(counter).toHaveTextContent('0')
-  expect(counter).toHaveStyle(`color: ${pink}`)
+  setTimeout(() => {
+    expect(counter).toHaveStyle(`color: ${pink}`)
+  }, 1000)
 })
